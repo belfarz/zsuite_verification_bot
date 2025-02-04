@@ -28,6 +28,11 @@ async def start_verification(message: Message):
 # Handle Brand Partner link submission
 @dp.message()
 async def verify_link(message: Message):
+    # Ensure message.text is not None
+    if not message.text:
+        await message.answer("⚠️ Please send a valid text message containing your referral link.")
+        return  # Stop further execution
+
     user_input = message.text.strip()
     
     # Check if input starts with the expected identifier
