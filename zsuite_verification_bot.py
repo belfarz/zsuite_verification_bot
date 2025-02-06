@@ -19,7 +19,7 @@ dp = Dispatcher()
 EXPECTED_PREFIX = "https://affiliate.zsuitepay.net/affiliates/signup.php?a_aid="
 
 # Handle /start command
-@dp.message(Command("start"))
+@dp.messag e(Command("start"))
 async def start_verification(message: Message):
     await message.answer(
         "👋 Welcome! Please verify your Brand Partner status.\nSend your referral link below:"
